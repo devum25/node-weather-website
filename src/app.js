@@ -6,7 +6,7 @@ const forecast = require('./utils/forecast.js')
 
 
 const app = express()
-
+const port = process.env.PORT || 5781;
 
 
 const pathToPublicFolder = path.join(__dirname,'../public');
@@ -80,6 +80,6 @@ app.get('*',(req,res)=>{
     res.send('404 Endpoint not found!');
 })
 
-app.listen('5781',()=>{
-    console.log('Server is running on port 5781!');
+app.listen(port,()=>{
+    console.log('Server is running on port '+port+'!');
 })
